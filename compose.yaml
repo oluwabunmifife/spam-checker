@@ -8,8 +8,9 @@ services:
       - "5000:5000"
     volumes:
       - .:/app
+      - ./instance:/app/instance 
     environment:
       - FLASK_APP=app.py
       - FLASK_ENV=development
-      - DATABASE_URL=sqlite:///data.db
+      - DATABASE_URL=sqlite:///instance/users.db
     restart: unless-stopped
